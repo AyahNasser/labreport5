@@ -2,7 +2,9 @@
 # cse15l-lab5-reports
 ----------------
 **Researching Commands**
- - Chosen Command is (less).
+
+
+- Since I really liked this lab, I will do a researching command lab on another command option which is the command less this time.
  
  - less command allows you to view the content of a file, and it allows you to searche for specific content in the file and navigate the file as well. 
  
