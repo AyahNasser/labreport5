@@ -1,208 +1,122 @@
 # labreport5
-# cse15l-lab3-reports
+# cse15l-lab5-reports
 ----------------
 **Researching Commands**
- - Chosen Command is (grep).
+ - Chosen Command is (less).
  
- - grep command is in command line searches for words in a file . 
+ - less command allows you to view the content of a file, and it allows you to searche for specific content in the file and navigate the file as well. 
  
- - 1) -i
- The command line -i option is a kind of a command line option that ignores the case sensitivity when searching for a pattern. 
- This command line is helpful when searching for something in a file, and you want all the words in lower and upper case. Because this command line
- will not distinguish between uppercase and lowercase. 
- - For example, in the screenshot below, I wanted to look for the word history in the HistoryJapan.txt file, and as we can see, that I wrote the History 
- with all lowercases, but it did show the uppercase words of History. 
+ - 1) -N
+ The command line -N option is a kind of a command line option that displays each line number of the file being reviewed, moreover, if you just use the less command, it will display the file content but without numbers of each line. Basically, the -N command line in less command is a way to have the lines of a file numbered. 
+ - For example, in the screenshot below, I will first only display the content of a file called WhereToMadrid and syntax to do so is 
+ ```
+ ayahsmacbook.@Ayahss-MacBook-Pro berlitz1 % less WhereToMadrid.txt
  
- - a) Using -i the command-line and its output Example 1:
+ ```
  
+ - a) Using less command to view the ccontent of a file:
+ 
+<img width="568" alt="image" src="https://user-images.githubusercontent.com/122571192/224853982-43eb5b82-a6c6-413d-b58c-915cf5c757ec.png">
+
+ 
+
+ 
+  - b) Now using -N the command-line and its output Example 2: 
+  - The syntax is: 
   ````
- ayahsmacbook.@Ayahss-MBP berlitz1 % grep -i "history" HistoryJapan.txt 
-        A Brief History
-        Prehistory and Early Chronicles
-        of Japan to study Chinese religion, history, music, literature, and
-        At this early stage in its history Japan was already (for
- ````
- 
- <img width="607" alt="Screenshot 2023-02-13 at 11 27 43 PM" src="https://user-images.githubusercontent.com/122571192/218668477-cb57e28d-56a4-49f2-8976-ecf9d2d7841f.png">
- 
-  - b) Using -i the command-line and its output Example 2: 
+ayahsmacbook.@Ayahss-MacBook-Pro berlitz1 % less -N WhereToMadrid.txt
   ````
-ayahsmacbook.@Ayahss-MBP berlitz1 % grep -i "according to the earliest" History
-Japan.txt
-        According to the earliest official accounts, the
-  ````
-  In this example, I wanted to look up the sentence in the txt file, however, I was not sure if the sentence was written in uppercase letters or
-  lowercase, so I just wrote the sentence I remembered, and it gave me where the sentence did appear and how it was actually written. 
+  - The output will be:
   
- - This is very useful because it saves time to go over the whole text to exactly match how the sentence or word was written to search it. Also, I found this interesting and helpful information from the lab tasks, and trying the command-line by myself, and chatGPT. 
- 
- 
- 
- - 2) -c 
- This command-line Shows how many a word appear in a text file, and again it is not case sensitive, which means I can write a word in lower or upper 
- case, and it will still give me how many times this specific word appeared. 
- 
- - a) First example is a code block of how I wrote the terminal and the output. 
- 
- ````
- ayahsmacbook.@Ayahss-MBP berlitz1 % grep -c "official" HistoryJapan.txt
- 3
-````
-Here, I wanted to see how many times the word "official" appeared in the text file, and this is helpful again because it saves so much time, instead
-of counting each word in the terminal. 
+<img width="565" alt="image" src="https://user-images.githubusercontent.com/122571192/224854696-971b6dc3-4395-4526-a627-d26d38841b80.png">
 
-- b) Second example is looking for the word "Hello" in a the WhatToGreek text file. 
-````
-ayahsmacbook.@Ayahss-MacBook-Pro berlitz1 % grep -c "Hello" WhatToGreek.txt 
-0
-````
-Here I wanted to look for the word Hello in the text file (WhatToGreek), and the output was zero, which means the word did not appear in the text file.
-- This command-line is helpful because it saves you so much time counting how many times a word appeared without having to go over all of the text file. 
-Also, this becomes even more helpful when the text files get larger. Also, I found this interesting and helpful information from the lab tasks, and trying the command-line by myself, and chatGPT. 
- 
-
-- 3) -l
-This command-line shows where a specific word appeared in differenet files, and it prints the names of the files thta have the word. Moreover, even if the word appeared more than once, the file name will be printed only once.  
-
-- a) Here is an example of me trying to find where the word "Official" appeared in so many files. This is helpful because it is fast and it gives you a list of where the word appeared between so many files. 
-
-````
-ayahsmacbook.@Ayahss-MBP berlitz1 % grep -l "Official" *.txt
-WhatToHongKong.txt
-WhereToFrance.txt
-WhereToMadrid.txt
-`````
-- The syntax to write the command was ```grep -l "Official" *.txt```, and the output was ```WhatToHongKong.txt WhereToFrance.txt WhereToMadrid.txt ``` which are the files where this word appeared. 
-
-- b) The second example is trying to find all the files in a directory that contain a certain pattern. 
-````
-ayahsmacbook.@Ayahss-MacBook-Pro berlitz1 % grep -l "^[0-9]*$" *
-HandRHawaii.txt
-HandRHongKong.txt
-HandRIbiza.txt
-HandRIsrael.txt
-HandRIstanbul.txt
-HandRJamaica.txt
-HandRJerusalem.txt
-HandRLakeDistrict.txt
-HandRLasVegas.txt
-HandRLisbon.txt
-HandRLosAngeles.txt
-HandRMadeira.txt
-HandRMadrid.txt
-HandRMallorca.txt
-HistoryDublin.txt
-HistoryEdinburgh.txt
-HistoryEgypt.txt
-HistoryFWI.txt
-HistoryFrance.txt
-HistoryGreek.txt
-HistoryHawaii.txt
-HistoryHongKong.txt
-HistoryIbiza.txt
-HistoryIndia.txt
-HistoryIsrael.txt
-HistoryIstanbul.txt
-HistoryItaly.txt
-HistoryJamaica.txt
-HistoryJapan.txt
-HistoryJerusalem.txt
-HistoryLakeDistrict.txt
-HistoryLasVegas.txt
-HistoryMadeira.txt
-HistoryMadrid.txt
-HistoryMalaysia.txt
-HistoryMallorca.txt
-IntroDublin.txt
-IntroEdinburgh.txt
-IntroEgypt.txt
-IntroFWI.txt
-IntroFrance.txt
-IntroGreek.txt
-IntroHongKong.txt
-IntroIbiza.txt
-IntroIndia.txt
-IntroIsrael.txt
-IntroIstanbul.txt
-IntroItaly.txt
-IntroJamaica.txt
-IntroJapan.txt
-IntroJerusalem.txt
-IntroLakeDistrict.txt
-IntroLasVegas.txt
-IntroLosAngeles.txt
-IntroMadeira.txt
-IntroMadrid.txt
-IntroMalaysia.txt
-IntroMallorca.txt
-JungleMalaysia.txt
-WhatToDublin.txt
-WhatToEdinburgh.txt
-WhatToEgypt.txt
-WhatToFWI.txt
-WhatToFrance.txt
-WhatToGreek.txt
-WhatToHawaii.txt
-WhatToHongKong.txt
-WhatToIbiza.txt
-WhatToIndia.txt
-WhatToIsrael.txt
-WhatToIstanbul.txt
-WhatToItaly.txt
-WhatToJamaica.txt
-WhatToJapan.txt
-WhatToLakeDistrict.txt
-WhatToLasVegas.txt
-WhatToLosAngeles.txt
-WhatToMadeira.txt
-WhatToMalaysia.txt
-WhatToMallorca.txt
-WhereToDublin.txt
-WhereToEdinburgh.txt
-WhereToEgypt.txt
-WhereToFWI.txt
-WhereToFrance.txt
-WhereToGreek.txt
-WhereToHawaii.txt
-WhereToHongKong.txt
-WhereToIbiza.txt
-WhereToIndia.txt
-WhereToIsrael.txt
-WhereToIstanbul.txt
-WhereToItaly.txt
-WhereToJapan.txt
-WhereToJerusalem.txt
-WhereToLakeDistrict.txt
-WhereToLosAngeles.txt
-WhereToMadeira.txt
-WhereToMadrid.txt
-WhereToMalaysia.txt
-WhereToMallorca.txt
-`````
-- Here, the command will search for lines that consist of only one or more digits in all files in the directory, then the command will print the names of all the files that contain the specified pattern. 
-- This command-line is helpful because it helps you to quickly find a certain pattern through all the files in the directory without having to go through all the files one by one which again saves time and effort. Also, I found this interesting and helpful information from the lab tasks, and trying the command-line by myself, and chatGPT. 
- 
-
-
-
-- 4) -w
-This command-line is an option with the grep command which matches only whole words where it will search in files in the current directory and try to find the matching whole words. 
-- a) First Example, trying to find the word "Official" is the (HistoryJapan.txt) text file. 
-`````
-ayahsmacbook.@Ayahss-MacBook-Pro berlitz1 % grep -w "official" HistoryJapan.txt
-        According to the earliest official accounts, the
-        cycle. Thus, 660 b.c. is still the official date celebrated
-        Nikko. Combining Shinto ritual with official Buddhist conformity, they
-`````
-- The output of trying to find the word (Official) in the (HistoryJapan.txt) text file gives the content of where the whole word appeared in the text file. 
   
-- b) Second example here I was trying to find the matching words that have part of the word I am searching. 
-`````
-ayahsmacbook.@Ayahss-MacBook-Pro berlitz1 % grep -w "Offici" HistoryJapan.txt
-`````
+- Here we can see the difference between the two examples, where on the first one the file was viewd without the line numbers. However, in the second example the file was viewd with the line numbers displayed of the file content. 
+  
+ - The -N option in the less command is very useful and helpful because it helps you to keep track on the comtent of large files. Especially, when dealing and debugging with large code files.
+ 
 
-- In this example, there was not output; although I know that the word "official" appears in the HistoryJapan.txt file, the command-line did not give output because I am only searching part of the word which is "Offici" which is now the whole word. 
-- The -w command-line is helpful if you are trying to be very specific and exact with what you are searching because it will only give you the exact (the whole word) you are looking for in a text file.  Also, I found this interesting and helpful information from the lab tasks, and trying the command-line by myself, and chatGPT. 
+
+ - 2)" +(Number) or + (search word)" 
+ - This command-line starts displaying the file from a specific line number or from a specific word the user wants to start from. The syntax for this command-line is.  
+
+ 
+ 
+ - a) First example is starting from a specific line number in the text file, and the syntax to do so is: 
+  
+ ````  
+  ayahsmacbook.@Ayahss-MacBook-Pro berlitz1 % less +20 WhereToMadrid.txt
+ ````
+- The output 
+<img width="572" alt="image" src="https://user-images.githubusercontent.com/122571192/224857580-5ae4bc10-cccb-45b3-88a7-4060da3cd59f.png">
+- Here the text file will be displayed from line number 20 which starts from the word Castile.
+
+
+
+- b) Second example starting from the line that contains the first occurance word that is being searched. 
+- The syntax to do so is: 
+````
+ayahsmacbook.@Ayahss-MacBook-Pro berlitz1 % less +/city WhereToMadrid.txt
+````
+
+- The output: 
+<img width="574" alt="image" src="https://user-images.githubusercontent.com/122571192/224860548-3dfad93d-c6ab-4472-969d-e64a2c2dafe5.png">
+
+Here the file will be displayed from the place where the word "city" first appeared in the text file. 
+- This command-line is helpful becasue it helps us start the text file from a specific place. It is alos very useful in large files where if someone knows the word or the line they are searching for where this command will just save time by locating the file from that lineof word without having to scroll through the file or trying to find a string. Also, I found this interesting and helpful information from the lab tasks, and trying the command-line by myself, and chatGPT. 
+ 
+
+- 3) -i
+This command line -i option is a kind of a command line option that ignores the case sensitivity when searching for a pattern. This command line is helpful when searching for something in a file, and you want all the words in lower and upper case. Because this command line will not distinguish between uppercase and lowercase. 
+
+- a) Here is an example of me trying to find where the word "SMALL" appeared in the WhereToMadrid text file. 
+
+
+- The syntax to write the command was ```less -i WhereToMadrid.txt```, then after entering the file we will write /(the word we are trying to search).
+- The ouput:
+<img width="573" alt="image" src="https://user-images.githubusercontent.com/122571192/224864585-9ac05652-7722-4457-84a4-153ba3221256.png">
+ Altough here the word "Small" appears to be in lowecase letters in the text file, however, I was still able to find it using the option of ignoring the case sensetivity. 
+
+- b) The second example is trying to find the same word using the same command line, but i will use the option of taking case sensitivty in account. 
+-The output:
+a. First I made the case significant in searching for a word. 
+<img width="358" alt="image" src="https://user-images.githubusercontent.com/122571192/224864994-54f80d9d-3ede-4ad2-aed0-ebf691d8cfe6.png">
+b. Then I searched for the same word I searched previously ```/SMALL``` with capital letters. 
+-The output: 
+<img width="570" alt="image" src="https://user-images.githubusercontent.com/122571192/224865113-622a35f1-210b-4c32-9a10-d73670faf99c.png">
+
+- When I make it sensitive for cases, it will not find the word small, altough we know it exists in the file from the last example, but since it is case sensitive it will only match the exact words. 
+- This command-line is helpful because it helps you to quickly find a certain pattern in a file without having to go through the whole file line by line which again saves time and effort. Also, I found this interesting and helpful information from the lab tasks, and trying the command-line by myself, and chatGPT. 
+ 
+
+
+
+- 4) -S
+This command-line is an option with the less command, and it helps to view the very long lines that might be wrapped to multiple lines becuase they cannot fit in the width of the terminal window. 
+- a) First Example, I am trying to view the text file WhereToMadrid whihc has longer lines that cannot fit in the width of my screen.
+- First, the output of viewing the text file without using the -S command-line will be: 
+<img width="506" alt="image" src="https://user-images.githubusercontent.com/122571192/224872258-7ecf412f-5f90-4cfd-b8a2-722a245fca77.png">
+
+- The syntax for using the -S command-line is:  
+`````
+ayahsmacbook.@Ayahss-MacBook-Pro berlitz1 % less -S WhereToMadrid.txt
+`````
+- The output:
+<img width="507" alt="image" src="https://user-images.githubusercontent.com/122571192/224872334-08bfd655-d626-4148-a9e8-e3cc8f1d9579.png">
+
+  
+- b) Second example I tried the same command-line with a different text file. 
+- Syntax:
+`````
+ayahsmacbook.@Ayahss-MacBook-Pro berlitz1 % less -S WhereToJapan.txt
+
+`````
+The output:
+<img width="503" alt="image" src="https://user-images.githubusercontent.com/122571192/224872465-75b2c5c7-ab63-4023-90d6-71d652a17c71.png">
+
+- We can see the difference between reviewing the text files with the -S command-line and without. When we do not use it, the texts seem to be unorganized, and it is displayed in a confusing way. However, when we did use the -S command-line, the text got more organized and it order for us to see the rest of the text file we can use the arrows as it appears on the terminal. 
+
+- The -S command-line is helpful if you are trying to read long files, and it makes the files look more organized and fit your terminal width window where the lines will not be cut in the middle. It provides a clearer way when we look at the files which can also help saving time when reading a more organized file. 
  
 
 
