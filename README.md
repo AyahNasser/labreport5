@@ -11,9 +11,9 @@
  - 1) -N
  The command line -N option is a kind of a command line option that displays each line number of the file being reviewed; moreover, if you just use the     less command, it will display the file content but without the numbers of each line. Basically, the -N command line in less command is a way to have the lines of a file numbered. 
  - For example, in the screenshot below, I will first only display the content of a file called WhereToMadrid, and the syntax to do so is 
+ 
  ```
  ayahsmacbook.@Ayahss-MacBook-Pro berlitz1 % less WhereToMadrid.txt
- 
  ```
  
  - a) Using less command to view the ccontent of a file:
@@ -24,9 +24,12 @@
  
   - b) Now using -N the command-line and its output Example 2: 
   - The syntax is: 
+  
   ````
 ayahsmacbook.@Ayahss-MacBook-Pro berlitz1 % less -N WhereToMadrid.txt
   ````
+  
+  
   - The output will be:
   
 <img width="565" alt="image" src="https://user-images.githubusercontent.com/122571192/224854696-971b6dc3-4395-4526-a627-d26d38841b80.png">
@@ -45,9 +48,12 @@ ayahsmacbook.@Ayahss-MacBook-Pro berlitz1 % less -N WhereToMadrid.txt
  
  - a) First example is starting from a specific line number in the text file, and the syntax to do so is: 
   
+  
  ````  
   ayahsmacbook.@Ayahss-MacBook-Pro berlitz1 % less +20 WhereToMadrid.txt
  ````
+ 
+ 
 - The output 
 <img width="572" alt="image" src="https://user-images.githubusercontent.com/122571192/224857580-5ae4bc10-cccb-45b3-88a7-4060da3cd59f.png">
 - Here the text file will be displayed from line number 20, which starts from the word Castile.
@@ -56,6 +62,8 @@ ayahsmacbook.@Ayahss-MacBook-Pro berlitz1 % less -N WhereToMadrid.txt
 
 - b) The second example starts from the line that contains the first occurrence word that is being searched. 
 - The syntax to do so is: 
+
+
 ````
 ayahsmacbook.@Ayahss-MacBook-Pro berlitz1 % less +/city WhereToMadrid.txt
 ````
@@ -99,6 +107,8 @@ This command-line is an option with less command, and it helps to view the very 
 <img width="506" alt="image" src="https://user-images.githubusercontent.com/122571192/224872258-7ecf412f-5f90-4cfd-b8a2-722a245fca77.png">
 
 - The syntax for using the -S command-line is:  
+
+
 `````
 ayahsmacbook.@Ayahss-MacBook-Pro berlitz1 % less -S WhereToMadrid.txt
 `````
@@ -108,9 +118,10 @@ ayahsmacbook.@Ayahss-MacBook-Pro berlitz1 % less -S WhereToMadrid.txt
   
 - b) Second example I tried the same command-line with a different text file. 
 - Syntax:
+
+
 `````
 ayahsmacbook.@Ayahss-MacBook-Pro berlitz1 % less -S WhereToJapan.txt
-
 `````
 The output:
 <img width="503" alt="image" src="https://user-images.githubusercontent.com/122571192/224872465-75b2c5c7-ab63-4023-90d6-71d652a17c71.png">
